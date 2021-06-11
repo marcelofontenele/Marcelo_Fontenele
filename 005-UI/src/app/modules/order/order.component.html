@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="container" style="width: 300px;">
+  
+    <form [formGroup]="form">
+
+        <div class="row">
+            <div class="col">
+                <h4>Emitir Ordem</h4>
+
+                <div class="mb-3">
+                    <label class="form-label">Ação</label>
+                    <input name="symbol" type="text" class="form-control" formControlName="symbol">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Quantidade</label>
+                    <input name="amount" class="form-control" formControlName="amount" type="text">
+                </div>
+
+                <div class="mb-3">
+                    <button class="btn btn-primary" (click)="emitir()">Comprar</button>
+                </div>
+            </div>
+           
+            
+        </div>
+
+    </form>
+
+    <div class="alert alert-success" role="alert" *ngIf="success">
+        Ordem enviada com sucesso.
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        {{error}}
+    </div>
+
+</div>

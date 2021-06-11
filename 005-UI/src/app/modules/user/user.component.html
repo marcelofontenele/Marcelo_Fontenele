@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container" style="width: 500px;" *ngIf="user">
+
+    <h4>
+        Valor em Conta: {{user.accountAmount | currency : 'R$'}}
+    </h4>
+    
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Ação</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let stock of user.positions'>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.amount}}</td>
+            <td>{{stock.currentPrice | currency : 'R$'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4>
+        Consolidado: {{user.consolidatedAmount | currency : 'R$'}}
+    </h4>
+
+</div>

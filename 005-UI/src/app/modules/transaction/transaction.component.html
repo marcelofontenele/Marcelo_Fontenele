@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container" style="width: 600px;">
+  
+    <form [formGroup]="form">
+
+        <div class="row">
+            <div class="col">
+                <h4>Origem</h4>
+
+                <div class="mb-3">
+                    <label class="form-label">Banco</label>
+                    <input name="origin_bank" type="text" class="form-control" formControlName="origin_bank" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Agência</label>
+                    <input name="origin_branch" class="form-control" formControlName="origin_branch" type="text" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">CPF</label>
+                    <input name="origin_cpf" class="form-control" formControlName="origin_cpf" type="number">
+                </div>
+            </div>
+            <div class="col">
+                <h4>Destino</h4>
+
+                <div class="mb-3">
+                    <label class="form-label">Banco</label>
+                    <input name="target_bank" type="text" class="form-control" formControlName="target_bank" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Agência</label>
+                    <input name="target_branch" class="form-control" formControlName="target_branch" type="text" readonly>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Conta</label>
+                    <input name="target_account" class="form-control" formControlName="target_account" type="number">
+                </div>
+            </div>
+            
+        </div>
+
+        <div>
+            <h4>Valor</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input name="amount" class="form-control" formControlName="amount" type="number" min="0.00" step="0.01">
+                <button class="btn btn-outline-primary" (click)="transfer()">Transferir</button>
+            </div>
+
+        </div>
+        
+    
+    </form>
+
+    <div class="alert alert-success" role="alert" *ngIf="success">
+      Transferencia realizada com sucesso.
+    </div>
+
+</div>

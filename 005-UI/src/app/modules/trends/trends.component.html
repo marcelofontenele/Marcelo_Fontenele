@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="container" style="width: 500px;" *ngIf="stocks">
+
+    <h4>
+        Trends
+    </h4>
+    
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let stock of stocks'>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.currentPrice | currency : 'R$'}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+

@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="container" style="width: 300px;">
+  
+    <form [formGroup]="form">
+
+        <div class="mb-3">
+            <label class="form-label">Login</label>
+            <input name="login" type="login" class="form-control" placeholder="login" formControlName="login">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input name="password" class="form-control" formControlName="password" type="password" placeholder="******">
+          </div>
+    
+        <div class="mb-3">
+            <button class="btn btn-primary" (click)="login()">Logar</button>
+        </div>
+    
+    </form>
+
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+      {{error}}
+    </div>
+
+</div>
