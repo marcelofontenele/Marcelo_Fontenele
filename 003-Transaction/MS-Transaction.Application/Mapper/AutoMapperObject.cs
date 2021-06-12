@@ -8,8 +8,7 @@ namespace MS_Transaction.Application.Mapper
     {
         public AutoMapperObject()
         {
-            CreateMap<TransferDTO, Transfer>()
-                .ForMember(a => a.Amount, b => b.MapFrom(c => decimal.Parse(c.Amount)));
+            CreateMap<TransferDTO, Transfer>();
 
             CreateMap<OriginDTO, Origin>();
 

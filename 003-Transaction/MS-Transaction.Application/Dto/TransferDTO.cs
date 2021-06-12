@@ -4,7 +4,7 @@
     {
         public string Event { get; set; }
 
-        public string Amount { get; set; }
+        public decimal Amount { get; set; }
 
         public TargetDTO Target { get; set; }
 

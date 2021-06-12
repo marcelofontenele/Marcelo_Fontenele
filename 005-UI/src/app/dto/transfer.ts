@@ -4,7 +4,7 @@ export class Transfer {
     event: string = "TRANSFER";
 	target: Target;
 	origin: Origin;
-	amount: string;
+	amount: any;
 }
 
 export class Target {

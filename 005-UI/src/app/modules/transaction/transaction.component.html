@@ -18,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">CPF</label>
-                    <input name="origin_cpf" class="form-control" formControlName="origin_cpf" type="number">
+                    <input name="origin_cpf" class="form-control" formControlName="origin_cpf" type="text">
                 </div>
             </div>
             <div class="col">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Conta</label>
-                    <input name="target_account" class="form-control" formControlName="target_account" type="number">
+                    <input name="target_account" class="form-control" formControlName="target_account" type="text">
                 </div>
             </div>
             
@@ -44,7 +44,7 @@
             <h4>Valor</h4>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
-                <input name="amount" class="form-control" formControlName="amount" type="number" min="0.00" step="0.01">
+                <input name="amount" class="form-control" formControlName="amount" type="text">
                 <button class="btn btn-outline-primary" (click)="transfer()">Transferir</button>
             </div>
 
@@ -57,4 +57,7 @@
       Transferencia realizada com sucesso.
     </div>
 
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        {{error}}
+    </div>
 </div>

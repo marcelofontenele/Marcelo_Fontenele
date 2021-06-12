@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Transfer } from 'src/app/dto/transfer';
 import { TransactionService } from 'src/app/services/transaction.service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-transaction',
@@ -10,7 +11,7 @@ import { TransactionService } from 'src/app/services/transaction.service';
 export class TransactionComponent implements OnInit {
 
     success:boolean;
-
+    error: string;
     form:FormGroup;
 
     constructor(
@@ -25,7 +26,7 @@ export class TransactionComponent implements OnInit {
             origin_bank: ['033'],
             origin_branch: ['03312'],
             origin_cpf: ['45358996060', Validators.required],
-            amount: ['1000.10', Validators.required],
+            amount: [1000.10, Validators.required],
         });
     }
 
@@ -49,12 +50,17 @@ export class TransactionComponent implements OnInit {
                     "origin": {
                         "bank": val.origin_bank, 
                         "branch": val.origin_branch,
-                        "cpf": val.origin_cpf
+                        "cpf":  val.origin_cpf
                     },
-                    "amount": val.amount
-                } as Transfer)
+                    "amount": parseFloat(val.amount)
+                }).pipe(
+                    catchError(error => {
+                        this.error = `Erro: ${error.error}`;
+                        return of(this.error);
+                    })
+                )
                 .subscribe(() => {
-                    this.success = true;
+                    this.success = !this.error;
                 });
         }
   }

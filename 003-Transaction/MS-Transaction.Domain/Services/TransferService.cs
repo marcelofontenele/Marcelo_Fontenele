@@ -26,8 +26,6 @@ namespace MS_Transaction.Domain.Services
             }
 
             this.transferRepository.Insert(transfer);
-
-            //SQS
         }
     }
 }

@@ -23,7 +23,7 @@ namespace MS_Transaction.WebApi.Controllers
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult Get(TransferDTO transfer)
+        public ActionResult Post(TransferDTO transfer)
         {
             try
             {
