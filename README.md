@@ -1,4 +1,5 @@
 # Case: Toro 
+https://github.com/ToroInvestimentos/desafio-toro-fullstack/blob/master/README.md
 
 Aplicação de microserviços desenvolvida em **.Net Core** para simular a transferência entre contas e emissão de ordem de ativos.
 
