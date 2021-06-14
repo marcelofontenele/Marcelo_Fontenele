@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using MS_Auth.Application.Dto;
 using MS_Auth.Application.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace MS_Auth.WebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace MS_Auth.WebApi.Controllers
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult<TokenDTO> Post(UserDTO user)
+        public async Task<ActionResult<TokenDTO>> Post(UserDTO user)
         {
             try
             {

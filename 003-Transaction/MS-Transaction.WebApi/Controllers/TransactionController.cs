@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using MS_Transaction.Application.Dto;
 using MS_Transaction.Application.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace MS_Transaction.WebApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace MS_Transaction.WebApi.Controllers
         }
 
         [HttpPost, AllowAnonymous]
-        public ActionResult Post(TransferDTO transfer)
+        public async Task<ActionResult> Post(TransferDTO transfer)
         {
             try
             {

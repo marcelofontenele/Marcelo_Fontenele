@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace MS_Investiments.WebApi.Controllers
 {
@@ -28,7 +29,7 @@ namespace MS_Investiments.WebApi.Controllers
         }
 
         [HttpPost, Route("order")]
-        public ActionResult Order(OrderDTO order)
+        public async Task<ActionResult> Order(OrderDTO order)
         {
             try
             {
@@ -46,7 +47,7 @@ namespace MS_Investiments.WebApi.Controllers
         }
 
         [HttpGet, Route("trends")]
-        public ActionResult<IEnumerable<StockDTO>> Trends()
+        public async Task<ActionResult<IEnumerable<StockDTO>>> Trends()
         {
             try
             {

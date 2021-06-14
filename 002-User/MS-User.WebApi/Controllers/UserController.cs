@@ -5,6 +5,7 @@ using MS_User.Application.Interfaces;
 using System;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace MS_User.WebApi.Controllers
 {
@@ -24,7 +25,7 @@ namespace MS_User.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<PositionDTO> Get()
+        public async Task<ActionResult<PositionDTO>> Get()
         {
             try
             {
