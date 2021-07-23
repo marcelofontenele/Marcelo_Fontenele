@@ -3,13 +3,15 @@ https://github.com/ToroInvestimentos/desafio-toro-fullstack/blob/master/README.m
 
 Aplicação de microserviços desenvolvida em **.Net Core** para simular a transferência entre contas e emissão de ordem de ativos.
 
-## Stack
+## Stack & Pattern
 
  - .Net Core 3.1
  - SQL Server
  - Entity Framework
  - RabbitMQ
  - Angular
+ - Microsservices
+ - DDD
   
 ## Requisitos
 
